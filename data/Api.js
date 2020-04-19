@@ -20,7 +20,8 @@ const _getRoleProfiles = () => {
     },
 
     {
-      title: "Designer",
+      department: "Finance",
+      title: "Investor Relations",
       icon: "ios-flower",
       id: 5,
       description:
