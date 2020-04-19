@@ -7,13 +7,11 @@ import { RectButton, ScrollView } from "react-native-gesture-handler";
 export default function JobsScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <View>
+      <View style={styles.padding}>
         <OptionButton icon="md-school" label="Software Engineer" onPress={() => WebBrowser.openBrowserAsync("https://docs.expo.io")} />
         <Text>This is a bit of a description about the Junior Programmer</Text>
         <Text>The career track notes</Text>
         <Text>Level notes</Text>
-      </View>
-      <View>
         <OptionButton
           icon="md-compass"
           label="Junior Programmer (career track and level)"
@@ -67,6 +65,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fafafa",
+  },
+  padding: {
+    flex: 1,
+    padding: 15,
   },
   contentContainer: {
     paddingTop: 15,
