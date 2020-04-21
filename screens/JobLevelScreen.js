@@ -10,11 +10,7 @@ class JobLevelScreen extends Component {
     super(props);
 
     this.state = {
-      loading: true,
-      loadingMessage: "Search...",
       data: [],
-      fullData: [],
-      error: null,
     };
   }
 
@@ -26,6 +22,8 @@ class JobLevelScreen extends Component {
     const { jobFamily } = this.props.route.params;
     var jobFamilies = Api.getJobFamilies();
     var jobLevels = {};
+    var description = "";
+
     console.log("show data for:", jobFamily, jobFamilies);
     // iterate over each element in the array
     for (var i = 0; i < jobFamilies.length; i++) {
@@ -33,12 +31,14 @@ class JobLevelScreen extends Component {
       if (jobFamilies[i].jobFamily == jobFamily) {
         console.log("we found it"); // we found it
         jobLevels = jobFamilies[i].jobLevels; // is the matched result
+        description = jobFamilies[i].description;
       }
     }
     //const jobLevels = jobFamilies.finance.jobLevels;
 
     this.setState({
       data: jobLevels,
+      description: description,
     });
   }
 
@@ -81,13 +81,26 @@ class JobLevelScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <FlatList
-          data={this.state.data}
-          renderItem={this._renderItem.bind(this)}
-          keyExtractor={(_, idx) => "key" + idx}
-          ItemSeparatorComponent={this.renderSeparator}
-        />
+      <View>
+        <View style={{ backgroundColor: "#ecf1f4", padding: 10 }}>
+          <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+            <Text>{this.state.description}</Text>
+          </View>
+        </View>
+        <View style={styles.padding}>
+          <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: 10 }}>
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>Role</Text>
+            <View style={{ marginHorizontal: 8, flex: 1, flexDirection: "row", justifyContent: "flex-end", alignItems: "center" }}>
+              <Text style={{ fontSize: 14, color: "grey" }}>Career Track and Level</Text>
+            </View>
+          </View>
+          <FlatList
+            data={this.state.data}
+            renderItem={this._renderItem.bind(this)}
+            keyExtractor={(_, idx) => "key" + idx}
+            ItemSeparatorComponent={this.renderSeparator}
+          />
+        </View>
       </View>
     );
   }
@@ -100,8 +113,12 @@ JobLevelScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    marginLeft: 10,
+    backgroundColor: "#ecf1f4",
+    padding: 10,
+  },
+  padding: {
+    padding: 15,
+    backgroundColor: "#ecf1f4",
   },
   separator: {
     height: 1,
