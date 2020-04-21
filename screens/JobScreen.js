@@ -7,13 +7,15 @@ import { RectButton, ScrollView } from "react-native-gesture-handler";
 export default function JobScreen(props) {
   const { navigation } = props;
 
+  const { jobFamily, level } = props.route.params;
+
   const [showMasterSz, setShowMasterSz] = useState(false);
   const [showLeadershipSz, setShowLeadershipSz] = useState(false);
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={styles.padding}>
-        <Text style={{ fontSize: 30, fontWeight: "bold", paddingBottom: 15 }}>Software Engineer</Text>
+        <Text style={{ fontSize: 20, fontWeight: "bold", paddingBottom: 15 }}>{level}</Text>
         <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
           <Text>This is a bit of a description about the Junior Programmer, some text goes in here and we yap on a bit.</Text>
         </View>
@@ -21,14 +23,14 @@ export default function JobScreen(props) {
         <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
           <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>Core</Text>
           <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+            <Text style={{ marginBottom: 5, fontWeight: "bold" }}>Account Payable and Receivable</Text>
             <Text style={{ marginBottom: 10 }}>
-              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
-              experience; or equivalent work experience.
+              Provides information on payables and receivables to aid in assessing the financial well-being of the business.
             </Text>
             <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
-            <Text style={{ marginBottom: 10, marginTop: 10 }}>
-              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
-              experience; or equivalent work experience.
+            <Text style={{ marginBottom: 5, marginTop: 10, fontWeight: "bold" }}>Accounting Principles </Text>
+            <Text style={{ marginBottom: 10 }}>
+              Applies knowledge of accounting practices and procedures to complete accounting assignments.
             </Text>
             <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
             <Text style={{ marginBottom: 10, marginTop: 10 }}>
@@ -147,21 +149,6 @@ function _renderLeadershipCapabilities(show) {
   } else {
     return;
   }
-}
-
-function OptionButton({ icon, label, onPress, isLastOption }) {
-  return (
-    <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
-      <View style={{ flexDirection: "row" }}>
-        <View style={styles.optionIconContainer}>
-          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
-        </View>
-        <View style={styles.optionTextContainer}>
-          <Text style={styles.optionText}>{label}</Text>
-        </View>
-      </View>
-    </RectButton>
-  );
 }
 
 const styles = StyleSheet.create({

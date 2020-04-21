@@ -21,7 +21,7 @@ const _getJobFamilies = () => {
 
     {
       department: "Finance",
-      jobFamily: "Investor Relations2",
+      jobFamily: "Investor Relations",
       jobLevels: [
         { level: "People Leadership Career Track PL40" },
         { level: "People Leadership Career Track PL50" },
@@ -50,71 +50,149 @@ const _getJobFamilies = () => {
         { level: "Individual Contributor IC40" },
         { level: "Individual Contributor IC50" },
       ],
-      description: "",
+      description:
+        "Performs general accounting activities, including the preparation, maintenance and reconciliation of accounts and financial statements such as balance sheets, profit-and-loss statements and capital expenditure schedules. Prepares, records, analyzes and reports accounting transactions and ensures the integrity of accounting records for completeness, accuracy and compliance with accepted accounting policies and principles. Provides financial support, including forecasting, budgeting and analyzing variations from budget. Analyzes and prepares statutory accounts, financial statements and reports. Conducts or assists in the documentation of accounting projects. Supports efficient operations of General Ledger, International Accounting, Accounts Receivable and Accounts Payable through the design, implementation and maintenance of key systems, internal controls, global close efficiency, audit readiness and management reporting. Blends suite of collaboration tools with accounting principles and project management to support operational accounting efficiency.   Implements automation, including robotic process automation (RPA) and partners frequently with IT to add efficiency through technology / automation. Creates and maintains financial / operating performance metrics along with communication to stakeholders to support business decisions. ",
       icon: "ios-flower",
     },
     {
       department: "Finance",
       jobFamily: "Payroll",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 6,
-      description: "",
+      description:
+        "Prepares, documents and disburses net payroll payments, payroll taxes and employee benefit payments. Prepares monthly, quarterly and annual tax filings based on regional requirements. Provide training to managers and employees on the payroll system. Prepares reports illustrating payroll expenditures, including such items as tax payments and regulatory benefit plan disbursements. Manages payroll journal entry and bonus accrual. Evaluates current systems, and recommends and develops operating efficiency improvements.  Responsible for managing external vendors, service agreements and vendor budgeting. ",
     },
     {
       department: "Finance",
       jobFamily: "Pricing Strategy",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 7,
-      description: "",
+      description:
+        "Responsible for driving and managing the overall pricing and packaging strategy for the entire portfolio of Cloud & BTF products. This team is focused on growing our revenue sustainably by managing our revenue strategy . The team works collaboratively across functions, including Finance, Product management, Product marketing, and Commerce to recommend and deliver pricing recommendations.",
     },
     {
       department: "Finance",
       jobFamily: "Procurement Operations",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 8,
-      description: "",
+      description:
+        "Performs financial modeling and assists in spend analysis to support internal customer departments and identify opportunities for cost savings. Performs administrative duties relating to organizing and coordinating procurement activities to include - Processing JIRA tickets, PO creation and Invoice Receiving, ensuring completeness and accuracy; follows up to resolve discrepancies with the initiating business/department. Assists AP in invoice resolution.  Evaluates processes to help drive continuous improvement of operational and cost effectiveness of the team.",
     },
     {
       department: "Finance",
       jobFamily: "Revenue Accounting",
       icon: "ios-flower",
-      id: 9,
-      description: "",
+      jobLevels: [
+        { level: "People Leadership Career Track PL20" },
+        { level: "People Leadership Career Track PL30" },
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "People Leadership Career Track PL60" },
+        { level: "People Leadership Career Track PL70" },
+        { level: "Individual Contributor IC10" },
+        { level: "Individual Contributor IC20" },
+        { level: "Individual Contributor IC30" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+      ],
+      description:
+        "Responsible for driving and managing the overall pricing and packaging strategy for the entire portfolio of Cloud & BTF products. This team is focused on growing our revenue sustainably by managing our revenue strategy . The team works collaboratively across functions, including Finance, Product management, Product marketing, and Commerce to recommend and deliver pricing recommendations. Performs financial modeling and assists in spend analysis to support internal customer departments and identify opportunities for cost savings. Performs administrative duties relating to organizing and coordinating procurement activities to include - Processing JIRA tickets, PO creation and Invoice Receiving, ensuring completeness and accuracy; follows up to resolve discrepancies with the initiating business/department. Assists AP in invoice resolution.  Evaluates processes to help drive continuous improvement of operational and cost effectiveness of the team. Implements controls and evaluates actions required for compliance with the company’s revenue recognition accounting process, including the bookings and billings process. Performs regular and special analysis (such as reviews of organizational billing practices) to ensure invoice accuracy and proper revenue recognition. Completes all required month-end close activities including revenue reconciliation and management reporting. May work with legal and sales personnel in reviewing revenue contracts to ensure adherence to company policies and resolves any revenue issues. Follows control procedures and interacts with audit or other functions in the approval of product discount pricing, stand-alone selling price, studies and significance analysis to ensure compliance with company policy and proper revenue recording. Conducts or assists in the documentation of accounting projects. Blends the  suite of collaboration tools with accounting principles and project management to support operational accounting efficiency.   Implements automation, including robotic process automation (RPA) and partners frequently with IT to add efficiency through technology / automation. Creates and maintains financial / operating performance metrics along with communication to stakeholders to support business decisions. ",
     },
     {
       department: "Finance",
       jobFamily: "Sourcing and Contracting",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 10,
-      description: "",
+      description:
+        "Provides strategic guidance and services across the full supplier relationship lifecycle (e.g., strategic sourcing, supplier identification, risk identification and monitoring, supplier onboarding, supplier relationship management, supplier renewal, etc.) to help  select the right suppliers and partners at the right cost.  Works with internal business owners and partners to achieve the best combination of price and long term price protection, improved SLAs, scaled implementation, additional features and functionality. Clarifies business owner needs and sources viable suppliers; supports supplier evaluation and selection; conducts risk assessments and determines whether full due diligence is required by other cross functional teams, such as Risk & Compliance, Security, Finance and IT Architecture.  Negotiates renewals at terms favorable to .",
     },
     {
       department: "Finance",
       jobFamily: "Strategy and Business Operations ",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 11,
-      description: "",
+      description:
+        "Supports the development of long and short run product and organizational strategy to ensure sustainable topline growth and profitability. Focus of the team is three fold: (1) product strategy, (2) performance management, and (3) monetization. ",
     },
     {
       department: "Finance",
       jobFamily: "Tax",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 12,
-      description: "",
+      description:
+        "Provides strategic, forward looking (e.g.,10 year horizon) guidance to Leadership to ensure has the right corporate structure to support a sustainable tax profile that both minimizes the Company's tax burden and aligns with the needs of the business.  Devises strategies to manage 's tax profile and tax burden in each local jurisdiction. Conducts research and analyses of existing and upcoming tax legislation (domestic and/or international); advises management on the tax implications resulting from projected organizational actions and transactions, and conducts rate forecasting over both short and long term horizons. Keeps  compliant with various local, state, and federal tax regulations; oversees tax audits.",
     },
     {
       department: "Finance",
       jobFamily: "Technical Accounting",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 13,
-      description: "",
+      description:
+        "Develops and implements accounting strategies and procedures in accordance with evolving regulations, legal and governmental requirements and industry trends that may impact . Advises  Leadership regarding the impact to financial statements of potential changes to accounting rules proposed by accounting standards setters. Develops, implements and communicates new policies and processes to comply with newly issued accounting standards. Provides accounting guidance related to proposed transactions to ensure conformity with applicable local country and international standards and company policies and procedures. Ensures that relevant accounting standards are appropriately and consistently applied. Partners with cross-functional teams across  and provides guidance to executive leadership, external auditors and our Board members. Responsible for quarterly / annual financial reporting to our executive management and the investor community. ",
     },
     {
       department: "Finance",
       jobFamily: "Treasury",
+      jobLevels: [
+        { level: "People Leadership Career Track PL40" },
+        { level: "People Leadership Career Track PL50" },
+        { level: "Individual Contributor IC40" },
+        { level: "Individual Contributor IC50" },
+        { level: "Individual Contributor IC60" },
+      ],
       icon: "ios-flower",
       id: 14,
-      description: "",
+      description:
+        "Manages the liquidity of the business, including cash inflows and outflows. Manages and executes treasury functions including investment management, bank relationship management, foreign exchange risk management, cash management, and treasury operations. Develops and implements capital structure, including financing alternatives and other capital markets initiatives. Manages the payment processing service providers and relationships. Assists in meeting overall treasury department's policies and regulatory requirements. ",
     },
   ];
 

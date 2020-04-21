@@ -58,7 +58,7 @@ export default function App(props) {
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
             <Stack.Screen name="JobFamily" component={JobFamilyScreen} />
-            <Stack.Screen name="Job" component={JobScreen} />
+            <Stack.Screen name="Job" component={JobScreen} options={({ route }) => ({ title: route.params.jobFamily })} />
             <Stack.Screen name="JobLevel" component={JobLevelScreen} options={({ route }) => ({ title: route.params.jobFamily })} />
             <Stack.Screen name="Links" component={LinksScreen} />
           </Stack.Navigator>

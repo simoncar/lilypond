@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Ionicons, Feather } from "@expo/vector-icons";
-import { Platform, StyleSheet, FlatList, Text, View } from "react-native";
+import { Platform, StyleSheet, FlatList, Text, View, TouchableOpacity } from "react-native";
 import { RectButton, ScrollView } from "react-native-gesture-handler";
 import { ListItem } from "../components/ListItem";
 import Api from "../data/Api";
@@ -11,6 +11,7 @@ class JobLevelScreen extends Component {
 
     this.state = {
       data: [],
+      descriptionLines: 10,
     };
   }
 
@@ -51,13 +52,13 @@ class JobLevelScreen extends Component {
 
   _renderItem({ item, index }) {
     //navigation.navigate("BeaconListing", { purpleList: true });
-
+    const { jobFamily } = this.props.route.params;
     return (
       <RectButton
         style={[styles.option]}
         onPress={() => {
           const { navigation } = this.props;
-          navigation.navigate("Job", {});
+          navigation.navigate("Job", { level: item.level, jobFamily: jobFamily });
         }}>
         <View style={{ flex: 1, flexDirection: "row", alignItems: "center", paddingHorizontal: 8 }}>
           <View>
@@ -81,11 +82,20 @@ class JobLevelScreen extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <View style={{ backgroundColor: "#ecf1f4", padding: 10 }}>
-          <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
-            <Text>{this.state.description}</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              if (this.state.descriptionLines == 10) {
+                this.setState({ descriptionLines: 100 });
+              } else {
+                this.setState({ descriptionLines: 10 });
+              }
+            }}>
+            <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+              <Text numberOfLines={this.state.descriptionLines}>{this.state.description}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.padding}>
           <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: 10 }}>
@@ -101,7 +111,7 @@ class JobLevelScreen extends Component {
             ItemSeparatorComponent={this.renderSeparator}
           />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
