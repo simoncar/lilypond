@@ -1,49 +1,152 @@
 import { Ionicons } from "@expo/vector-icons";
-import * as WebBrowser from "expo-web-browser";
-import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity, Switch } from "react-native";
 import { RectButton, ScrollView } from "react-native-gesture-handler";
 
-export default function JobsScreen() {
+export default function JobScreen(props) {
+  const { navigation } = props;
+
+  const [showMasterSz, setShowMasterSz] = useState(false);
+  const [showLeadershipSz, setShowLeadershipSz] = useState(false);
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={styles.padding}>
-        <OptionButton icon="md-school" label="Software Engineer" onPress={() => WebBrowser.openBrowserAsync("https://docs.expo.io")} />
-        <Text>This is a bit of a description about the Junior Programmer</Text>
-        <Text>The career track notes</Text>
-        <Text>Level notes</Text>
-        <OptionButton
-          icon="md-compass"
-          label="Junior Programmer (career track and level)"
-          onPress={() => WebBrowser.openBrowserAsync("https://reactnavigation.org")}
-        />
+        <Text style={{ fontSize: 30, fontWeight: "bold", paddingBottom: 15 }}>Software Engineer</Text>
+        <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+          <Text>This is a bit of a description about the Junior Programmer, some text goes in here and we yap on a bit.</Text>
+        </View>
+        <Text style={{ fontSize: 20, fontWeight: "bold", paddingTop: 20, paddingBottom: 15 }}>Master the Craft</Text>
+        <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+          <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>Core</Text>
+          <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+            <Text style={{ marginBottom: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+            <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+            <Text style={{ marginBottom: 10, marginTop: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+            <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+            <Text style={{ marginBottom: 10, marginTop: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity
+              onPress={() => {
+                setShowMasterSz(!showMasterSz);
+              }}>
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>Specialisation</Text>
+            </TouchableOpacity>
+            <View style={{ marginHorizontal: 8, flex: 1, flexDirection: "row", justifyContent: "flex-end", alignItems: "center" }}>
+              <Switch
+                value={showMasterSz}
+                onValueChange={(v) => {
+                  setShowMasterSz(!showMasterSz);
+                }}
+              />
+            </View>
+          </View>
 
-        <Text>This is a bit of a description about the Junior Programmer</Text>
-        <Text>The career track notes</Text>
-        <Text>Level notes</Text>
+          {_renderMasterSpecialization(showMasterSz)}
+        </View>
 
-        <Text style={[styles.subHeading]}>Master the Craft (core)</Text>
-        <Text>Category 1</Text>
-        <Text>Category 2</Text>
-        <Text>Category 3</Text>
+        <Text style={{ fontSize: 20, fontWeight: "bold", paddingTop: 20, paddingBottom: 15 }}>Leadership Capabilities</Text>
+        <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+          <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>Core</Text>
+          <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+            <Text style={{ marginBottom: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+            <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+            <Text style={{ marginBottom: 10, marginTop: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+            <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+            <Text style={{ marginBottom: 10, marginTop: 10 }}>
+              Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without
+              experience; or equivalent work experience.
+            </Text>
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity
+              onPress={() => {
+                setShowLeadershipSz(!showLeadershipSz);
+              }}>
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>Specialisation</Text>
+            </TouchableOpacity>
+            <View style={{ marginHorizontal: 8, flex: 1, flexDirection: "row", justifyContent: "flex-end", alignItems: "center" }}>
+              <Switch
+                value={showLeadershipSz}
+                onValueChange={(v) => {
+                  setShowLeadershipSz(!showLeadershipSz);
+                }}
+              />
+            </View>
+          </View>
 
-        <Text style={[styles.subHeading]}>Master the Craft (specialisation)</Text>
-        <Text>Category 1</Text>
-        <Text>Category 2</Text>
-        <Text>Category 3</Text>
-
-        <Text style={[styles.subHeading]}>Leadership Capabilities (core)</Text>
-        <Text>Category 1</Text>
-        <Text>Category 2</Text>
-        <Text>Category 3</Text>
-
-        <Text style={[styles.subHeading]}>Leadership Capabilities (specialisation)</Text>
-        <Text>Category 1</Text>
-        <Text>Category 2</Text>
-        <Text>Category 3</Text>
+          {_renderLeadershipCapabilities(showLeadershipSz)}
+        </View>
       </View>
     </ScrollView>
   );
+}
+
+function _renderMasterSpecialization(show) {
+  if (show) {
+    return (
+      <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+        <Text style={{ marginBottom: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+        <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+        <Text style={{ marginBottom: 10, marginTop: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+        <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+        <Text style={{ marginBottom: 10, marginTop: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+      </View>
+    );
+  } else {
+    return;
+  }
+}
+
+function _renderLeadershipCapabilities(show) {
+  if (show) {
+    return (
+      <View style={{ backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+        <Text style={{ marginBottom: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+        <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+        <Text style={{ marginBottom: 10, marginTop: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+        <View style={{ borderBottomWidth: 1, borderBottomColor: "#ecf1f4" }} />
+        <Text style={{ marginBottom: 10, marginTop: 10 }}>
+          Typically requires a Bachelor’s degree and a minimum of 2 years of related experience; or an advanced degree without experience;
+          or equivalent work experience.
+        </Text>
+      </View>
+    );
+  } else {
+    return;
+  }
 }
 
 function OptionButton({ icon, label, onPress, isLastOption }) {
@@ -64,7 +167,7 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fafafa",
+    backgroundColor: "#ecf1f4",
   },
   padding: {
     flex: 1,
@@ -72,6 +175,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 15,
+    paddingBottom: 500,
   },
   optionIconContainer: {
     marginRight: 12,

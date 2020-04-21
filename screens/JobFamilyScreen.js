@@ -1,19 +1,16 @@
-import * as React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import React, { Component } from "react";
+import { Ionicons, Feather } from "@expo/vector-icons";
 import { Platform, StyleSheet, FlatList, Text, View } from "react-native";
 import { RectButton, ScrollView } from "react-native-gesture-handler";
+import { ListItem } from "../components/ListItem";
 import Api from "../data/Api";
 
-class HomeScreen extends React.Component {
+class JobFamilyScreen extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: true,
-      loadingMessage: "Search...",
       data: [],
-      fullData: [],
-      error: null,
     };
   }
 
@@ -22,29 +19,34 @@ class HomeScreen extends React.Component {
   }
 
   loadData = () => {
-    var roleProfiles = Api.getRoleProfiles();
-    console.log(roleProfiles);
+    var jobFamilies = Api.getJobFamilies();
     this.setState({
-      data: roleProfiles,
+      data: jobFamilies,
     });
   };
 
-  _onPress() {
-    const { navigation } = this.props;
-    console.log("on press");
-    //navigation.navigate("JobScreen");
-  }
-
   _renderItem({ item, index }) {
-    //navigation.navigate("BeaconListing", { purpleList: true });
+    //console.log("item/index:", item, index);
+    console.log("-----------");
     return (
-      <RectButton style={[styles.option]} onPress={this._onPress}>
-        <View style={{ flexDirection: "row" }}>
-          <View style={styles.optionIconContainer}>
+      <RectButton
+        style={[styles.option]}
+        onPress={() => {
+          const { navigation } = this.props;
+          navigation.navigate("JobLevel", {
+            jobFamily: item.jobFamily,
+          });
+        }}>
+        <View style={{ flex: 1, flexDirection: "row", alignItems: "center", paddingHorizontal: 8 }}>
+          <View>
             <Ionicons name={item.icon} size={22} color="rgba(0,0,0,0.35)" />
           </View>
-          <View style={styles.optionTextContainer}>
-            <Text style={styles.optionText}>{item.title}</Text>
+          <View>
+            <Text style={styles.optionText}>{item.jobFamily}</Text>
+          </View>
+
+          <View style={{ marginHorizontal: 8, flex: 1, flexDirection: "row", justifyContent: "flex-end", alignItems: "center" }}>
+            {<Feather name="chevron-right" size={22} color="#777777" />}
           </View>
         </View>
       </RectButton>
@@ -58,13 +60,18 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <FlatList data={this.state.data} renderItem={this._renderItem.bind(this)} ItemSeparatorComponent={this.renderSeparator} />
+        <FlatList
+          data={this.state.data}
+          renderItem={this._renderItem.bind(this)}
+          keyExtractor={(_, idx) => "key" + idx}
+          ItemSeparatorComponent={this.renderSeparator}
+        />
       </View>
     );
   }
 }
 
-HomeScreen.navigationOptions = {
+JobFamilyScreen.navigationOptions = {
   header: null,
 };
 
@@ -99,7 +106,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: "flex-start",
     marginTop: 1,
+    marginLeft: 10,
   },
 });
 
-export default HomeScreen;
+export default JobFamilyScreen;
