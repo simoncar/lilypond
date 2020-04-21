@@ -21,16 +21,8 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={JobFamilyScreen}
         options={{
-          title: "Get Started",
+          title: "Profiles",
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
-        }}
-      />
-      <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
-        options={{
-          title: "Resources",
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
     </BottomTab.Navigator>

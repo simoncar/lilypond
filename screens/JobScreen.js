@@ -1,8 +1,6 @@
-import { Ionicons } from "@expo/vector-icons";
-
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Switch } from "react-native";
-import { RectButton, ScrollView } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function JobScreen(props) {
   const { navigation } = props;
@@ -95,6 +93,18 @@ export default function JobScreen(props) {
           </View>
 
           {_renderLeadershipCapabilities(showLeadershipSz)}
+        </View>
+        <View
+          style={{
+            marginTop: 20,
+            backgroundColor: "white",
+            borderRadius: 10,
+            padding: 15,
+            justifyContent: "center",
+            flex: 1,
+            flexDirection: "row",
+          }}>
+          <Text style={{ alignSelf: "center", color: "blue" }}> ** Sample Data Only ** </Text>
         </View>
       </View>
     </ScrollView>

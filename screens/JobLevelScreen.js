@@ -80,9 +80,9 @@ class JobLevelScreen extends Component {
     return <View style={styles.separator} />;
   };
 
-  render() {
+  renderHeader = () => {
     return (
-      <ScrollView>
+      <View>
         <View style={{ backgroundColor: "#ecf1f4", padding: 10 }}>
           <TouchableOpacity
             onPress={() => {
@@ -104,14 +104,31 @@ class JobLevelScreen extends Component {
               <Text style={{ fontSize: 14, color: "grey" }}>Career Track and Level</Text>
             </View>
           </View>
-          <FlatList
-            data={this.state.data}
-            renderItem={this._renderItem.bind(this)}
-            keyExtractor={(_, idx) => "key" + idx}
-            ItemSeparatorComponent={this.renderSeparator}
-          />
         </View>
-      </ScrollView>
+      </View>
+    );
+  };
+
+  renderFooter = () => {
+    return (
+      <View style={{ marginTop: 20, backgroundColor: "white", borderRadius: 10, padding: 15 }}>
+        <Text style={{ alignSelf: "center", color: "blue" }}>** Sample Data Only **</Text>
+      </View>
+    );
+  };
+
+  render() {
+    return (
+      <View>
+        <FlatList
+          ListHeaderComponent={this.renderHeader}
+          data={this.state.data}
+          renderItem={this._renderItem.bind(this)}
+          keyExtractor={(_, idx) => "key" + idx}
+          ItemSeparatorComponent={this.renderSeparator}
+          ListFooterComponent={this.renderFooter}
+        />
+      </View>
     );
   }
 }
