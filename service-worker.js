@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/lilypond/precache-manifest.75f13753d0eeacf02a01f1a4eaee0e2f.js"
+  "/lilypond/precache-manifest.7d521f0f0691d3d7fc51cdfa3d0d9214.js"
 );
 
 workbox.skipWaiting();

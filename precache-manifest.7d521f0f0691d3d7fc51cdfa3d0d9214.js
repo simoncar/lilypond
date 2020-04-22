@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/lilypond/static/js/2.153a3a37.chunk.js"
   },
   {
-    "revision": "49a79d66bdea2debf1832bf4d7aca127",
-    "url": "/lilypond/./fonts/SpaceMono-Regular.ttf"
+    "revision": "48c7ed4e7da9792af288a60d7242d615",
+    "url": "/lilypond/expo-service-worker.js"
   },
   {
     "revision": "b2e0fc821c6886fb3940f85a3320003e",
@@ -64,8 +64,8 @@ self.__precacheManifest = [
     "url": "/lilypond/favicon-16.png"
   },
   {
-    "revision": "48c7ed4e7da9792af288a60d7242d615",
-    "url": "/lilypond/expo-service-worker.js"
+    "revision": "49a79d66bdea2debf1832bf4d7aca127",
+    "url": "/lilypond/./fonts/SpaceMono-Regular.ttf"
   },
   {
     "revision": "872545dde71de3842234bf6afe80c4cb",
